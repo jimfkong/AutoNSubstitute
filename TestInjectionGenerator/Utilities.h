@@ -1,0 +1,36 @@
+#pragma once
+
+#ifndef UTILITIES_H
+#define UTILITIES_H
+
+#include <string>
+#include <vector>
+
+/*
+* Collection of basic utility functions
+*/
+class Utilities
+{
+public:
+	static char* stringToCharStar(const std::string& str);
+	static std::string readFile(const std::string& path);
+	static std::vector<std::string> readLineByLine(const std::string& path);
+	static bool stringStartsWith(const std::string& str, const std::string& substr);
+	static std::string trim(const std::string& str, const std::string& whitespace = " ");
+
+	/*
+	* Check if a given value is present within the given container.
+	* @param container container to search
+	* @param value value to find
+	*/
+	template<typename T, typename Container>
+	static bool isInContainer(const Container& container, const T value)
+	{
+		return container.find(value) != container.end();
+	}
+
+private:
+	static std::ifstream openFile(const std::string& path);
+};
+
+#endif
