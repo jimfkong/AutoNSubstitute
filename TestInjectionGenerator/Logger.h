@@ -5,6 +5,7 @@
 
 #include "ILogger.h"
 #include "LoggerMultiton.h"
+#include "LogEntry.h"
 
 #include <memory>
 #include <string>
@@ -18,13 +19,14 @@ public:
 	// TODO Destructor is public because of shared pointer. Investigate make_shared?
 	~Logger();
 
-	void log();
+	void log(const std::string& logLevel, const std::string& message);
+	friend std::ostream& operator<<(std::ostream& os, const Logger& logger);
 
 private:
-	Logger(const std::string& name);
+	Logger();
 	friend std::shared_ptr<ILogger> LoggerMultiton::getLogger(std::string key);
 
-	std::string m_name;
+	std::vector<LogEntry> m_messages;
 };
 
 #endif

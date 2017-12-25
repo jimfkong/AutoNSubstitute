@@ -10,12 +10,11 @@
 #include "Injection.h"
 
 /* 
-* Represents a C# file
+* C# file
 */
 class SourceFile
 {
 public:
-	SourceFile();
 	SourceFile(std::string className, std::string nameSpace, 
 		std::vector<Injection> injections);
 	virtual ~SourceFile();

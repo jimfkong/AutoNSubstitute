@@ -5,6 +5,8 @@
 
 int main()
 {
+	// TODO Pass input file and output file via args
+	// TODO Make own shared namespace for all these files
 	InputParser inputParser;
 	Formatter formatter;
 

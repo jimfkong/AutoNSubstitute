@@ -29,6 +29,23 @@ public:
 		return container.find(value) != container.end();
 	}
 
+	template<typename Container>
+	static std::string printContainer(const Container& container, bool printNewLines)
+	{
+		std::ostringstream containerString;
+
+		for (auto it = container.begin(); it != container.end(); ++it)
+		{
+			containerString << *it;
+			if (printNewLines)
+			{
+				containerString << std::endl;
+			}
+		}
+
+		return containerString.str();
+	}
+
 private:
 	static std::ifstream openFile(const std::string& path);
 };

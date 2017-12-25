@@ -88,6 +88,8 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -145,6 +147,7 @@
     <ClCompile Include="Formatter.cpp" />
     <ClCompile Include="Injection.cpp" />
     <ClCompile Include="InputParser.cpp" />
+    <ClCompile Include="LogEntry.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="LoggerMultiton.cpp" />
     <ClCompile Include="OutputParser.cpp" />
@@ -158,6 +161,7 @@
     <ClInclude Include="ILogger.h" />
     <ClInclude Include="Injection.h" />
     <ClInclude Include="InputParser.h" />
+    <ClInclude Include="LogEntry.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="LoggerMultiton.h" />
     <ClInclude Include="OutputParser.h" />

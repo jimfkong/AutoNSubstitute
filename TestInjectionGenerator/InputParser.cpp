@@ -7,7 +7,7 @@
 #include <string>
 
 /* Constructor */
-InputParser::InputParser() {}
+InputParser::InputParser(std::shared_ptr<ILogger> logger) : m_logger(logger) {}
 
 /* Destructor */
 InputParser::~InputParser() {}

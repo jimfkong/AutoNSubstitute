@@ -6,7 +6,7 @@
 #include <string>
 
 /*
-* Represents a dependency injection
+* C# dependency injection
 */
 class Injection
 {

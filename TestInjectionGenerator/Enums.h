@@ -8,7 +8,8 @@ namespace Enums
 	/*
 	* Category of code blocks that comprise a C# class
 	*/
-	enum categories {
+	enum categories 
+	{
 		nameSpace,
 		className,
 		injection,

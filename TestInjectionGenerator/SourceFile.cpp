@@ -1,8 +1,5 @@
 #include "SourceFile.h"
 
-/* Default constructor */
-SourceFile::SourceFile() {}
-
 /* 
 * Constructor 
 * @param className name of the C# class
@@ -26,7 +23,7 @@ SourceFile:: ~SourceFile() {}
 * @param file SourceFile to print
 * @returns output stream of the SourceFile instance as a C# test file
 */
-std::ostream& operator<<(std::ostream & os, const SourceFile& file)
+std::ostream& operator<<(std::ostream& os, const SourceFile& file)
 {
 	// TODO Make some of these more generic
 	// TODO Import namespaces for injections
