@@ -19,6 +19,7 @@ class LoggerMultiton
 public:
 	// TODO Dump logs to file
 	static std::shared_ptr<ILogger> getLogger(std::string key = "default");
+	static void printLoggers(std::string outputPath);
 
 private:
 	typedef std::unordered_map<std::string, std::shared_ptr<ILogger>> LoggerMap;

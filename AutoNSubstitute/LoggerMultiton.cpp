@@ -39,7 +39,7 @@ std::shared_ptr<ILogger> LoggerMultiton::getLogger(std::string key)
 	}
 	else
 	{
-		std::shared_ptr<ILogger> logger(new Logger(key));
+		std::shared_ptr<ILogger> logger(new Logger());
 		m_loggers[key] = logger;
 		return logger;
 	}
