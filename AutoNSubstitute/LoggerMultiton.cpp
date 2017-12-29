@@ -27,7 +27,7 @@ LoggerMultiton::LoggerMap LoggerMultiton::initMap()
 * @param key key to the logger to retrieve
 * @return shared pointer to a logger instance
 */
-std::shared_ptr<ILogger> LoggerMultiton::getLogger(std::string key)
+std::shared_ptr<ILogger> LoggerMultiton::getLogger(const std::string& key)
 {
 	if (Utilities::isInContainer(m_loggers, key))
 	{
@@ -39,6 +39,26 @@ std::shared_ptr<ILogger> LoggerMultiton::getLogger(std::string key)
 		m_loggers[key] = logger;
 		return logger;
 	}
+}
+
+/*
+* Print the contents of a specific logger
+* @param key logger to print
+* @returns contents of the logger. If the key does not exist, returns an empty string.
+*/
+std::string LoggerMultiton::printLogger(const std::string& key)
+{
+	if (Utilities::keyInMap(m_loggers, key))
+	{
+		std::ostringstream loggerOutput;
+
+		loggerOutput << key << std::endl;
+		loggerOutput << m_loggers[key] << std::endl;
+
+		return loggerOutput.str();
+	}
+
+	return "";
 }
 
 /*

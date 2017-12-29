@@ -25,7 +25,7 @@ public:
 private:
 	Logger();
 	// Declare LoggerMultiton as friend to allow it to construct a Logger instance
-	friend std::shared_ptr<ILogger> LoggerMultiton::getLogger(std::string key);
+	friend std::shared_ptr<ILogger> LoggerMultiton::getLogger(const std::string& key);
 
 	std::vector<LogEntry> m_messages;
 };

@@ -6,6 +6,7 @@
 #include <memory>
 #include <sstream>
 #include <string>
+#include <unordered_map>
 #include <vector>
 
 /*
@@ -53,6 +54,19 @@ public:
 		}
 
 		return containerString.str();
+	}
+
+	/*
+	* Returns true if the given key is found in the map. 
+	* @param in map to search
+	* @param key key to find
+	* @returns true if key is in map, false otherwise
+	*/
+	template<typename T, typename T2>
+	static bool keyInMap(const std::unordered_map<T, T2>& in, const T& key)
+	{
+		// TODO Make this support std::Map as well
+		return (in.find(key) != in.end());
 	}
 
 private:
