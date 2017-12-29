@@ -3,9 +3,10 @@
 #ifndef UTILITIES_H
 #define UTILITIES_H
 
+#include <memory>
+#include <sstream>
 #include <string>
 #include <vector>
-#include <sstream>
 
 /*
 * Collection of basic utility functions
@@ -30,6 +31,13 @@ public:
 		return container.find(value) != container.end();
 	}
 
+	/*
+	* Print a container to string.
+	* Assumes the contents of the container overrides the stream operator.
+	* @param container container to print
+	* @param printNewLines If true, prints a new line between each container element
+	* @returns container contents as a string
+	*/
 	template<typename Container>
 	static std::string printContainer(const Container& container, bool printNewLines)
 	{

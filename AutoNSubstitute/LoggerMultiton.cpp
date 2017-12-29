@@ -9,11 +9,7 @@ LoggerMultiton::LoggerMap LoggerMultiton::m_loggers = LoggerMultiton::initMap();
 LoggerMultiton::LoggerMultiton() {}
 
 /* Destructor */
-LoggerMultiton::~LoggerMultiton() 
-{
-	// TODO Double check that we don't need to delete the map - should be auto cleaned
-	// m_loggers.erase(m_loggers.begin(), m_loggers.end());
-}
+LoggerMultiton::~LoggerMultiton() {}
 
 /* 
 * Create a new LoggerMap instance
@@ -43,4 +39,21 @@ std::shared_ptr<ILogger> LoggerMultiton::getLogger(std::string key)
 		m_loggers[key] = logger;
 		return logger;
 	}
+}
+
+/*
+* Print all stored loggers
+* @returns string of each loggers contents
+*/
+std::string LoggerMultiton::printAllLoggers()
+{
+	std::ostringstream loggerOutputs;
+
+	for (auto it = m_loggers.begin(); it != m_loggers.end(); ++it)
+	{
+		loggerOutputs << it->first << std::endl;
+		loggerOutputs << *(it->second) << std::endl;
+	}
+
+	return loggerOutputs.str();
 }

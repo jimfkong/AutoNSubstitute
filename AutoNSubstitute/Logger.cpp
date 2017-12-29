@@ -18,12 +18,18 @@ Logger::~Logger() {}
 */
 void Logger::log(const std::string& logLevel, const std::string& message) 
 {
+	// TODO Add the option to supress specific log levels - maybe add a loggerConfig object?
 	m_messages.push_back(LogEntry(logLevel, message));
 }
 
-std::ostream& operator<<(std::ostream& os, const Logger& logger)
+/*
+* Write the messages to output
+* @param os output stream to write to
+* @returns given output stream with logger messages added
+*/
+std::ostream& Logger::write(std::ostream& os) const
 {
-	os << Utilities::printContainer(logger.m_messages, false);
+	os << Utilities::printContainer(m_messages, false);
 
 	return os;
 }

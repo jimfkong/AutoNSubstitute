@@ -20,10 +20,11 @@ public:
 	~Logger();
 
 	void log(const std::string& logLevel, const std::string& message);
-	friend std::ostream& operator<<(std::ostream& os, const Logger& logger);
+	std::ostream& write(std::ostream& os) const;
 
 private:
 	Logger();
+	// Declare LoggerMultiton as friend to allow it to construct a Logger instance
 	friend std::shared_ptr<ILogger> LoggerMultiton::getLogger(std::string key);
 
 	std::vector<LogEntry> m_messages;

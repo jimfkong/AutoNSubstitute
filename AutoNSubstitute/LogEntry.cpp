@@ -26,9 +26,9 @@ LogEntry::~LogEntry() {}
 */
 std::ostream& operator<<(std::ostream& os, const LogEntry& entry)
 {
-	// TODO Format this string nicely
-	os << entry.m_timestamp << " "
-		<< entry.m_logLevel << " "
+	// TODO Make the log level an enum or something more fixed
+	os << entry.m_timestamp << ": "
+		<< entry.m_logLevel << ": "
 		<< entry.m_message << std::endl;
 	return os;
 }
@@ -40,5 +40,5 @@ std::ostream& operator<<(std::ostream& os, const LogEntry& entry)
 std::string LogEntry::getTimestamp() const
 {
 	auto currentTime = time(NULL);
-	return asctime(localtime(&currentTime));
+	return Utilities::trim(asctime(localtime(&currentTime)), "\n");
 }
