@@ -5,6 +5,8 @@
 // TODO Do we want to import utilities? Introduces tighter coupling
 #include "Utilities.h"
 
+// TODO Exception handling
+
 /* Constructor */
 Logger::Logger() {}
 

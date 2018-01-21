@@ -122,3 +122,44 @@ std::ifstream Utilities::openFile(const std::string& path)
 
 	return ifs;
 }
+
+// https://stackoverflow.com/questions/2844817/how-do-i-check-if-a-c-string-is-an-int
+bool Utilities::isStringInt(const std::string& str)
+{
+	if (str.empty() || ((!isdigit(str[0])) 
+		&& (str[0] != '-') 
+		&& (str[0] != '+'))) 
+		return false;
+
+	char * p;
+	strtol(str.c_str(), &p, 10);
+
+	return (*p == 0);
+}
+
+// https://stackoverflow.com/questions/447206/c-isfloat-function
+bool Utilities::isStringFloat(const std::string& str)
+{
+	std::istringstream iss(str);
+	float f;
+	iss >> std::noskipws >> f;						 
+	return iss.eof() && !iss.fail();
+}
+
+bool Utilities::stringToBool(const std::string& str)
+{
+	return str.compare("true") == 0;
+}
+
+std::vector<std::string> Utilities::splitLine(const std::string& input, const char delim)
+{
+	std::vector<std::string> result;
+	std::stringstream ssInput(input);
+	std::string token;
+	while (std::getline(ssInput, token, delim))
+	{
+		result.push_back(token);
+	}
+
+	return result;
+}

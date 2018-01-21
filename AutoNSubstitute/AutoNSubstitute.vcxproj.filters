@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Tree">
+      <UniqueIdentifier>{994f2d26-7d37-4a47-8d1b-9610cecf9c2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Logger">
+      <UniqueIdentifier>{b1a01b7e-7173-40f5-924b-4e9a6d4ff3b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Logger">
+      <UniqueIdentifier>{1d0f52d6-2489-4538-b553-23a62c1498b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tree">
+      <UniqueIdentifier>{92a50385-ad59-4a9e-b4fa-abe061a10155}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="InputParser.cpp">
@@ -33,17 +45,20 @@
     <ClCompile Include="Formatter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LoggerMultiton.cpp">
+    <ClCompile Include="AutoNSubstitute.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Logger.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Logger</Filter>
     </ClCompile>
     <ClCompile Include="LogEntry.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Logger</Filter>
     </ClCompile>
-    <ClCompile Include="AutoNSubstitute.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="LoggerMultiton.cpp">
+      <Filter>Source Files\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>Source Files\Tree</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -68,17 +83,23 @@
     <ClInclude Include="Formatter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Logger.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Tree.h">
+      <Filter>Header Files\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Header Files\Tree</Filter>
     </ClInclude>
     <ClInclude Include="ILogger.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Logger</Filter>
     </ClInclude>
-    <ClInclude Include="LoggerMultiton.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Logger.h">
+      <Filter>Header Files\Logger</Filter>
     </ClInclude>
     <ClInclude Include="LogEntry.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="LoggerMultiton.h">
+      <Filter>Header Files\Logger</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

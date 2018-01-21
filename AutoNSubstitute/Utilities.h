@@ -20,6 +20,10 @@ public:
 	static std::vector<std::string> readLineByLine(const std::string& path);
 	static bool stringStartsWith(const std::string& str, const std::string& substr);
 	static std::string trim(const std::string& str, const std::string& whitespace = " ");
+	static bool isStringInt(const std::string& str);
+	static bool isStringFloat(const std::string& str);
+	static bool stringToBool(const std::string& str);
+	static std::vector<std::string> splitLine(const std::string& input, const char delim);
 
 	/*
 	* Check if a given value is present within the given container.

@@ -15,4 +15,5 @@ int main()
 	std::ostringstream oss;
 	oss << sourceFile;
 	std::cout << formatter.format(oss.str()) << std::endl;
+	std::cout << LoggerMultiton::printAllLoggers() << std::endl;
 }

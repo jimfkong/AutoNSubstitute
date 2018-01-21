@@ -18,6 +18,7 @@ class LoggerMultiton
 {
 public:
 	static std::shared_ptr<ILogger> getLogger(const std::string& key = "default");
+	static void setConfig();
 	static std::string printLogger(const std::string& key);
 	static std::string printAllLoggers();
 

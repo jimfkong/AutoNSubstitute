@@ -34,12 +34,14 @@ SourceFile InputParser::parse(const std::string& inputFilePath) const
 		{
 			case Enums::categories::nameSpace:
 			{
+				m_logger->log("INFO", "Found namespace");
 				nameSpace = result.second;
 
 				break;
 			}
 			case Enums::categories::injection:
 			{
+				m_logger->log("INFO", "Found injection");
 				const Injection injection(result.second);
 				injections.push_back(injection);
 
@@ -47,6 +49,7 @@ SourceFile InputParser::parse(const std::string& inputFilePath) const
 			}
 			case Enums::categories::className:
 			{
+				m_logger->log("INFO", "Found classname");
 				className = result.second;
 
 				break;
